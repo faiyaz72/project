@@ -3,8 +3,14 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
+  "scripts": {
+    "start": "concurrently \"bun run --watch packages/server/index.ts\" \"bun run --watch packages/client\"",
+    "build": "bun run -w build",
+    "dev": "bun run index.ts"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "concurrently": "^9.2.0"
   },
   "peerDependencies": {
     "typescript": "^5"
